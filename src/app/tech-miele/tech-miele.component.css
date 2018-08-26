@@ -1,0 +1,47 @@
+.table {
+    cursor: pointer;
+}
+
+.blue {
+    background-color: rgba(39, 171, 223, 0.459);
+}
+
+.fridge{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(39, 171, 223, 0.459);
+}
+
+.default {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(107, 207, 68, 0.479);
+}
+
+.brown{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(233, 159, 47, 0.603);
+}
+
+.fridger, .browner, .mixxer, .defaulter {
+    padding-left: 40px;
+}
+
+.mix {
+    width: 30px;
+    height: 30px;
+    background-color: white ;
+    background-image: linear-gradient(to right, rgba(68, 196, 247, 0.473) ,rgba(233, 159, 47, 0.603));
+}
+
+strong {
+    font-size: 15px;
+}
+
+.form-group {
+    width: 25%;
+    margin-left:100px;
+}
+
+

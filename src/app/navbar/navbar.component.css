@@ -1,0 +1,12 @@
+.dropdown {
+    cursor: pointer;
+}
+
+.navbar {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0.5rem;
+}
+
+.bg-primary {
+    background-color: #8d000c!important;
+}

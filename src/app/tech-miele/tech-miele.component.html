@@ -1,0 +1,59 @@
+<div class="p-5">
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" for="inputLarge">Ψάξε για περιοχή</label>
+    <input class="form-control form-control-lg" 
+    #query
+    (keyup)="filter(query.value)"
+    type="text"
+     placeholder="Εδώ πληκτρολογείς την περιοχή που θές να ψάξεις" id="inputLarge">
+  </div>
+  <div class="row">
+    <div class="col-10">
+      <table class="table table-hover">
+        <tbody>
+          <tr class="table-default" *ngFor="let tech of filteredTechs;let i = index" [ngClass]="{blue: tech.specialization == 'Ψυκτικός', 
+          brown: tech.specialization == 'Καφετιέρα',
+           mix: tech.specialization  =='Ψυκτικός & Καφετιέρα',
+          default: tech.specialization  == 'Απορροφητήρας'
+          }">
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <td>{{i + 1}}</td>
+                  <td>{{tech.lastName | titlecase}}</td>
+                  <td>{{tech.firstName | titlecase}}</td>
+                  <td>{{tech.address}}</td>
+                  <td>{{tech.postCode}}</td>
+                  <td>{{tech.area}}</td>
+                  <td>{{tech.email}}</td>
+                  <td>{{tech.phoneNumber}}</td>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <h6>Περιοχές Εξυπηρέτησης Τεχνικού</h6>
+              <p>{{tech.areaService}}</p>
+            </mat-expansion-panel>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-2 mt-5">
+      <div class="fridge">
+        <h4 class="fridger"> Ψυκτικός</h4>
+      </div>
+      <br>
+      <br>
+      <div class="brown">
+        <h4 class="browner"> Καφετιέρα</h4>
+      </div>
+      <br>
+      <br>
+      <div class="mix">
+        <h4 class="mixxer">Ψυκτικός/Καφετιέρα</h4>
+      </div>
+      <br>
+      <br>
+      <div class="default">
+        <h4 class="defaulter">Toποθέτηση Απορροφητήρα</h4>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.mt-5{
+   padding: 200px;
+}
+
+.card {
+    margin: 0 auto;
+    max-width: 30rem;
+}
+
+img{
+    height:140px;
+    width:350px;
+    margin: 0 auto;
+}
+
+.btn-primary {
+    background-color:#8d000c
+}

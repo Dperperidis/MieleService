@@ -1,0 +1,22 @@
+<div class="container album column mt-5">
+  <div class="row  justify-content-around">
+    <div class="col-sm-3 col-md-4 col-lg-3 " *ngFor="let prod of washingmachine">
+      <div class="card mb-3">
+        <div class="card-img-wrapper">
+          <h4 class="card-header">{{prod.title}}</h4>
+          <div class="card-body">
+          </div>
+          <img src="{{prod.img}}" alt="Card image">
+
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">{{prod.desc}}</p>
+              <h4 class="card-text">{{prod.price | currency:'EUR':symbol}}</h4>
+              <a href="{{prod.link}}" target="_blank" class="card-link">Περισσότερες πληροφορίες</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

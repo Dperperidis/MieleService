@@ -1,0 +1,12 @@
+.btn-success {
+    background-color: #8d000c!important;
+}
+
+.container {
+    max-width: 500px;
+    padding: 50px;
+}
+
+.invalid-feedback {
+    font-size: 90%;
+}

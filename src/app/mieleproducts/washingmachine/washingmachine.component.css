@@ -1,0 +1,31 @@
+img{
+    height: 200px;
+     width: 100%;
+      display: block;
+}
+
+.card img {
+    transform: scale(1, 1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+  }
+
+.card:hover img {
+    transform: scale(1.1, 1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 1;
+
+  }
+
+.card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card:hover {
+    -webkit-box-shadow: 3px 3px 5px 6px rgb(150, 148, 148);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px rgb(150, 148, 148); /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px rgb(150, 148, 148);      
+  }
+

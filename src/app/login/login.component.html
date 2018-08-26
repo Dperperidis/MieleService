@@ -1,0 +1,37 @@
+<div class="mt-5" *ngIf="!loggedIn()">
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="container">
+        <h2 class="modal-title text-center">Sign In</h2>
+        <br>
+        <form class="form my-2 my-lg-0" #loginForm="ngForm" (ngSubmit)="login()">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Email" required name="email" [(ngModel)]="employee.email">
+          </div>
+          <Br>
+          <input class="form-control mr-sm-2" type="password" placeholder="Password" required name="password" [(ngModel)]="employee.password">
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Log In</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="mt-5" *ngIf="loggedIn()">
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="container">
+          <h1 class="modal-title text-center">You are already LoggedIn</h1>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

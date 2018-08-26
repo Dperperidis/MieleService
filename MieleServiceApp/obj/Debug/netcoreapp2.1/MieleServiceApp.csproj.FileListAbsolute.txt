@@ -1,0 +1,14 @@
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\bin\Debug\netcoreapp2.1\MieleServiceApp.deps.json
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\bin\Debug\netcoreapp2.1\MieleServiceApp.runtimeconfig.json
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\bin\Debug\netcoreapp2.1\MieleServiceApp.runtimeconfig.dev.json
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\bin\Debug\netcoreapp2.1\MieleServiceApp.dll
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\bin\Debug\netcoreapp2.1\MieleServiceApp.pdb
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\obj\Debug\netcoreapp2.1\MieleServiceApp.csprojResolveAssemblyReference.cache
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\obj\Debug\netcoreapp2.1\MieleServiceApp.csproj.CoreCompileInputs.cache
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\obj\Debug\netcoreapp2.1\MieleServiceApp.RazorAssemblyInfo.cache
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\obj\Debug\netcoreapp2.1\MieleServiceApp.RazorAssemblyInfo.cs
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\obj\Debug\netcoreapp2.1\MieleServiceApp.AssemblyInfoInputs.cache
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\obj\Debug\netcoreapp2.1\MieleServiceApp.AssemblyInfo.cs
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\obj\Debug\netcoreapp2.1\MieleServiceApp.RazorTargetAssemblyInfo.cache
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\obj\Debug\netcoreapp2.1\MieleServiceApp.dll
+D:\Dimitris\Programming\git\MieleService\MieleServiceApp\obj\Debug\netcoreapp2.1\MieleServiceApp.pdb
