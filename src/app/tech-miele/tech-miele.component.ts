@@ -11,6 +11,7 @@ import { Observable, of, Subscription } from "rxjs";
 import { Technician } from "../_models/technician";
 import { AuthService } from "../_services/auth.service";
 import { ToastrService } from "ngx-toastr";
+import { TechService } from "../_services/tech.service";
 
 @Component({
   selector: "tech-miele",
@@ -37,8 +38,10 @@ export class TechMieleComponent implements OnInit, OnDestroy {
 
 technicians: Technician[];
 
-  constructor(private authService: AuthService, private toastr: ToastrService) {
-    this.authService.getTechs()
+  constructor(private authService: AuthService,
+     private toastr: ToastrService,
+     private techService: TechService,) {
+    this.techService.getTechs()
     .subscribe(techs => this.filteredTechs = this.technicians = techs)
   }
 

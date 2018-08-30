@@ -18,6 +18,7 @@ import { KitchenComponent } from "./mieleproducts/kitchen/kitchen.component";
 import { PotsComponent } from "./mieleproducts/pots/pots.component";
 import { ToysComponent } from "./mieleproducts/toys/toys.component";
 import { VacuumComponent } from "./mieleproducts/vacuum/vacuum.component";
+import { ExternalTechsComponent } from "./tech-miele/external-techs/external-techs.component";
 
 
 export const routes: Routes = [
@@ -44,6 +45,7 @@ export const routes: Routes = [
             {path: 'products/pots', component: PotsComponent},
             {path: 'products/toys', component: ToysComponent},
             {path: 'products/vacuum', component: VacuumComponent},
+            {path: 'external', component: ExternalTechsComponent},
 
            ]
     }

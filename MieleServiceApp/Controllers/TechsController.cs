@@ -61,6 +61,34 @@ namespace MieleServiceApp.Controllers
             }
         }
 
+        [Route("externalOrder")]
+        [HttpPost]
+        public IActionResult Post([FromBody]ExternalTechs techs)
+        {
+               
+
+                var result = _ctx.ExternalTechs.Add(techs);
+                _ctx.SaveChanges();
+                return Ok(result.Entity);
+          
+        }
+
+        [Route("getTasks")]
+        [HttpGet]
+
+        public IActionResult GetTasks()
+        {
+            try
+            {
+                var result = _ctx.ExternalTechs.ToList();
+                return Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Κάτι πήγε στραβά");
+            }
+        }
     }
 
 }

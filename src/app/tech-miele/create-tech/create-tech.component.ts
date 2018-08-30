@@ -5,6 +5,7 @@ import { AuthService } from "../../_services/auth.service";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
 import { Technician } from "../../_models/technician";
+import { TechService } from "../../_services/tech.service";
 
 @Component({
   selector: "app-create-tech",
@@ -18,7 +19,7 @@ export class CreateTechComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService,
+    private techService: TechService,
     private toastr: ToastrService,
     private router: Router
   ) {}
@@ -44,7 +45,7 @@ export class CreateTechComponent implements OnInit {
   create() {
     if (this.registerForm.valid) {
       this.technician = Object.assign({}, this.registerForm.value);
-      this.authService.createTech(this.technician).subscribe(res =>{
+      this.techService.createTech(this.technician).subscribe(res =>{
         this.toastr.success("Τα στοιχεία του τεχνικού καταχωρήθηκαν")
         this.router.navigate(['/mieletech'])
         

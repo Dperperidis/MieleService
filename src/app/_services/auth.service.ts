@@ -47,13 +47,7 @@ export class AuthService {
     return !this.jwtHelper.isTokenExpired(token);
   }
 
-  createTech(technician: Technician) {
-    return this.http.post(this.baseUrl + "techs/register", technician);
-  }
 
-  getTechs(): Observable<Array<Technician>> {
-    return this.http.get<Array<Technician>>(this.baseUrl + "techs/techlist");
-  }
   getUsers(): Observable<Array<User>> {
     return this.http.get<Array<User>>(this.baseUrl + "auth/agents");
   }

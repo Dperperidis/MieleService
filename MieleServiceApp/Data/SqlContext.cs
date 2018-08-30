@@ -12,5 +12,6 @@ namespace MieleServiceApp.Data
         public SqlContext(DbContextOptions<SqlContext> options) : base(options) { }
         public DbSet<User> Users { get; set; }
         public DbSet<Tech> Technicians { get; set; }
+        public DbSet<ExternalTechs> ExternalTechs { get; set; }
     }
 }

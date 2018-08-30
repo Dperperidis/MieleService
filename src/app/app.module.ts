@@ -11,6 +11,8 @@ import { MatButtonModule, MatCheckboxModule } from "@angular/material";
 import { MatToolbarModule, MatTableModule } from "@angular/material";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 import { AppComponent } from "./app.component";
@@ -39,6 +41,8 @@ import { AgentComponent } from "./agent/agent.component";
 import { AgentCardComponent } from "./agent-card/agent-card.component";
 import { AgentCardResolver } from "./_resolvers/agent-card.resolver";
 import { UsersService } from "./_services/users.service";
+import { ExternalTechsComponent } from './tech-miele/external-techs/external-techs.component';
+import { TechService } from "./_services/tech.service";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -64,15 +68,18 @@ export function tokenGetter() {
     RegisterComponent,
     CreateTechComponent,
     AgentComponent,
-    AgentCardComponent
+    AgentCardComponent,
+    ExternalTechsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     MatButtonModule,
     MatExpansionModule,
+    MatFormFieldModule,
     MatToolbarModule,
     MatCheckboxModule,
+    MatInputModule,
     TabsModule.forRoot(),
     MatTableModule,
     BrowserAnimationsModule,
@@ -95,7 +102,8 @@ export function tokenGetter() {
     ErrorInterceptor,
     AuthGuard,
     AgentCardResolver,
-    UsersService
+    UsersService,
+    TechService
   ],
   bootstrap: [AppComponent]
 })

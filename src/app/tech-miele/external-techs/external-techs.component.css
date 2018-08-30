@@ -1,0 +1,14 @@
+input[type=text],textarea
+{
+    background-color: rgba(191, 189, 189, 0.295);
+    border:solid 1px #BFBDBD;
+    color: #c51717fa;
+    height: 28px;
+    padding-left:10px;
+    width: 150px;
+    box-shadow: 2px 2px 0 #828181 inset;
+}
+
+.btn {
+    background-color: #af121f!important;
+}

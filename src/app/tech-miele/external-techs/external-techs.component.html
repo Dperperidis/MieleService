@@ -1,0 +1,69 @@
+
+<div class="p-5">
+  <div class="row">
+    <div class="col-2">
+      <form #f="ngForm" (ngSubmit)="createTask(f.value)">
+        <div class="form-group">
+          <label for="area">Περιοχή</label>
+          <input name="area" id="area" type="text" [(ngModel)]="techs.area" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="date">Ημερομηνία</label>
+          <input name="date" id="date" type="text" [(ngModel)]="techs.date" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="customerId">ID Πελάτη</label>
+          <input name="customerId" id="customerId" type="text" [(ngModel)]="techs.customerId" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="fullName">Ονοματεπώνυμο</label>
+          <input name="fullName" id="fullName" type="text" [(ngModel)]="techs.fullName" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="order">Εντολή</label>
+          <input name="order" id="order" type="text" [(ngModel)]="techs.order" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="origin">Προέλευση</label>
+          <input name="origin" id="origin" type="text" [(ngModel)]="techs.origin" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="model">Μοντέλο</label>
+          <input name="model" id="model" type="text" [(ngModel)]="techs.model" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="damage">Βλάβη</label>
+          <textarea name="damage" id="damage" type="text" [(ngModel)]="techs.damage" class="form-control"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Save</button>
+      </form>
+    </div>
+    <div class="col-10">
+      <table class="table table-hover">
+        <tbody>
+          <tr class="table-default" *ngFor="let tech of techTasks">
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  
+                  <td>{{tech.area}}</td>
+                  <td>{{tech.date}}</td>
+                  <td>{{tech.customerId}}</td>
+                  <td>{{tech.fullName}}</td>
+                  <td>{{tech.order}}</td>
+                  <td>{{tech.origin}}</td>
+                  <td>{{tech.model}}</td>
+                  <td>{{tech.damage}}</td>
+              
+
+
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <h6>Περιοχές Εξυπηρέτησης Τεχνικού</h6>
+              <p>asdfsdf</p>
+            </mat-expansion-panel>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
