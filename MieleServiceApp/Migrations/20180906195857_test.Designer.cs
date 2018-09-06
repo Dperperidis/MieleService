@@ -10,8 +10,8 @@ using MieleServiceApp.Data;
 namespace MieleServiceApp.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20180826095853_change")]
-    partial class change
+    [Migration("20180906195857_test")]
+    partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,72 @@ namespace MieleServiceApp.Migrations
                 .HasAnnotation("ProductVersion", "2.1.1-rtm-30846")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("MieleServiceApp.Model.ExternalTechs", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Area");
+
+                    b.Property<string>("Damage");
+
+                    b.Property<string>("Date");
+
+                    b.Property<string>("FullName");
+
+                    b.Property<string>("Model");
+
+                    b.Property<string>("Order");
+
+                    b.Property<string>("Origin");
+
+                    b.Property<string>("PartsCost");
+
+                    b.Property<string>("ServiceCost");
+
+                    b.Property<string>("ServiceDesc");
+
+                    b.Property<string>("TotalCost");
+
+                    b.Property<string>("customerId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ExternalTechs");
+                });
+
+            modelBuilder.Entity("MieleServiceApp.Model.Partners", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("City");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Fax");
+
+                    b.Property<string>("Mobile");
+
+                    b.Property<string>("Nomos");
+
+                    b.Property<string>("Partner");
+
+                    b.Property<string>("Phone");
+
+                    b.Property<string>("PostCode");
+
+                    b.Property<string>("State");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Partners");
+                });
 
             modelBuilder.Entity("MieleServiceApp.Model.Tech", b =>
                 {

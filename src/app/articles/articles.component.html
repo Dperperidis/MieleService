@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="row">
+    <h1 class="my-4">Διάφορα Άρθρα
+      <small>Δες καινούργιες καινοτομίες και πληροφορίες για τις οικιακές συσκεύες</small>
+    </h1>
+
+    <!-- Blog Post -->
+    <div class="card mb-4 col-6">
+      <img class="card-img-top" src="https://www.toonpool.com/user/1631/files/cyprus_financial_washing_machine_1969435.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h2 class="card-title">Η οικονομική κρίση των συσκευών</h2>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos
+          cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni
+          quis!
+        </p>
+        <button type="button" class="btn btn-primary" (click)="openModalWithClass(template)">Open modal with custom css class</button>
+      </div>
+      <div class="card-footer text-muted">
+        Posted on January 1, 2017 by
+        <a>Start Bootstrap</a>
+      </div>
+    </div>
+
+    <!-- Blog Post -->
+    <div class="card mb-4 col-6">
+      <img class="card-img-top" src="http://news.livingkitchen-cologne.de/en/wp-content/uploads/2012/08/Waschmaschine_der_Zukunft_5.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h2 class="card-title">Το πλυντήριο του μέλλοντος</h2>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos
+          cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni
+          quis!
+        </p>
+        <button type="button" class="btn btn-primary" (click)="openModalWithClass(template)">Open modal with custom css class</button>
+      </div>
+      <div class="card-footer text-muted">
+        Posted on January 1, 2017 by
+        <a>Start Bootstrap</a>
+      </div>
+    </div>
+
+    <!-- Blog Post -->
+    <div class="card mb-4 col-6">
+      <img class="card-img-top" src="https://www.naftemporiki.gr/fu/p/1333447/638/399/0x00000000013a5726/2/oikiaki-suskeui-texnitis-noimosunis.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h2 class="card-title">Ζούμε πλέον στον κόσμο του αυτοματισμού?</h2>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos
+          cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni
+          quis!
+        </p>
+        <button type="button" class="btn btn-primary" (click)="openModalWithClass(template)">Open modal with custom css class</button>
+      </div>
+      <div class="card-footer text-muted">
+        Posted on January 1, 2017 by
+        <a>Start Bootstrap</a>
+      </div>
+    </div>
+    <!-- Blog Post -->
+    <div class="card mb-4 col-6">
+      <img class="card-img-top" src="http://www.repairservicebangalore.in/sites/default/files/images/slideshow/durable-ifb-washing-machine-repair-in-bangalore-by-servicing-expert.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h2 class="card-title">Αντικατάσταση τεχνικών από ρομπότ</h2>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos
+          cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni
+          quis!
+        </p>
+        <button type="button" class="btn btn-primary" (click)="openModalWithClass(template)">Open modal with custom css class</button>
+      </div>
+      <div class="card-footer text-muted">
+        Posted on January 1, 2017 by
+        <a>Start Bootstrap</a>
+      </div>
+    </div>
+
+  </div>
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Just a modal with a bunch of words inside, nothing serious.
+    </div>
+  </ng-template>
+</div>

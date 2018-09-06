@@ -1,51 +1,22 @@
-import { Component, OnInit } from "@angular/core";
-import { ExternalTechs } from "../../_models/externalTechs";
-import { TechService } from "../../_services/tech.service";
-import { Http2SecureServer } from "http2";
-import { HttpClient } from "@angular/common/http";
-import {
-  trigger,
-  style,
-  state,
-  transition,
-  animate
-} from "@angular/animations";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 
 @Component({
   selector: "app-external-techs",
   templateUrl: "./external-techs.component.html",
-  styleUrls: ["./external-techs.component.css"],
-  animations: [
-    trigger("detailExpand", [
-      state(
-        "collapsed",
-        style({ height: "0px", minHeight: "0", visibility: "hidden" })
-      ),
-      state("expanded", style({ height: "*", visibility: "visible" })),
-      transition(
-        "expanded <=> collapsed",
-        animate("225ms cubic-bezier(0.4, 0.0, 0.2, 1)")
-      )
-    ])
-  ]
+  styleUrls: ["./external-techs.component.css"]
 })
-export class ExternalTechsComponent implements OnInit {
-  panelOpenState = false;
-  techs = {};
-  techTasks;
-
-  constructor(private techService: TechService, private http: HttpClient) {
-    this.techService.getTechTasks().subscribe(res => {
-      this.techTasks = res;
-    });
+export class ExternalTechsComponent implements OnInit, OnDestroy {
+  constructor() {
+    document.body.style.backgroundImage =
+      "url(../../../../assets/img/backgroundtechmiele.jpg)";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.height = "auto";
   }
 
   ngOnInit() {}
 
-  createTask(details) {
-    this.techs = {};
-    this.techService.createTaskOrder(details).subscribe(res => {
-      this.techTasks.push(res);
-    });
+  ngOnDestroy() {
+    document.body.style.backgroundImage = '';
   }
 }

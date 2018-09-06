@@ -7,12 +7,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/register']" *ngIf="loggedIn()">Δημιουργία χρήστη
+        <li class="nav-item"  *ngIf="loggedIn()">
+          <a class="nav-link" [routerLink]="['/register']">Δημιουργία χρήστη
           </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/newtech']" *ngIf="loggedIn()">Δημιουργία τεχνικού
+        <li class="nav-item" *ngIf="loggedIn() ">
+            <a class="nav-link" [routerLink]="['/newtech']" >Δημιουργία τεχνικού
             </a>
           </li>
       </ul>

@@ -43,6 +43,7 @@ technicians: Technician[];
      private techService: TechService,) {
     this.techService.getTechs()
     .subscribe(techs => this.filteredTechs = this.technicians = techs)
+ 
   }
 
   filter(query: string) {

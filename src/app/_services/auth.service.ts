@@ -9,7 +9,6 @@ import {
 } from "rxjs";
 import { catchError, map } from "rxjs/operators";
 import { JwtHelperService } from "@auth0/angular-jwt";
-import { Technician } from "../_models/technician";
 
 @Injectable({
   providedIn: "root"
@@ -47,10 +46,8 @@ export class AuthService {
     return !this.jwtHelper.isTokenExpired(token);
   }
 
-
   getUsers(): Observable<Array<User>> {
     return this.http.get<Array<User>>(this.baseUrl + "auth/agents");
   }
-
 
 }

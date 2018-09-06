@@ -80,7 +80,7 @@ namespace MieleServiceApp.Controllers
         {
             try
             {
-                var result = _ctx.ExternalTechs.ToList();
+                var result = _ctx.ExternalTechs.OrderByDescending(x => x.Id).ToList();
                 return Ok(result);
 
             }
@@ -89,6 +89,68 @@ namespace MieleServiceApp.Controllers
                 return BadRequest("Κάτι πήγε στραβά");
             }
         }
+
+        [Route("{id}")]
+        [HttpGet]
+        public IActionResult GetTaskById(int id)
+        {
+            try
+            {
+
+                var result = _ctx.ExternalTechs.Find(id);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Κάτι πήγε στραβά");
+            }
+        }
+
+        [Route("update")]
+        [HttpPost]
+        public IActionResult Update([FromBody]ExternalTechs techs)
+        {
+
+            try
+            {
+                var result = _ctx.ExternalTechs.Update(techs);
+                _ctx.SaveChanges();
+                return Ok(result.Entity);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Κάτι πήγε στραβά");
+            }
+
+
+        }
+
+        [Route("delete/{id}")]
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+
+            try
+            {
+                var original = _ctx.ExternalTechs.Find(id);
+                var result = _ctx.ExternalTechs.Remove(original);
+
+                _ctx.SaveChanges();
+
+                return Ok(true);
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Κάτι πήγε στραβά");
+            }
+
+
+        }
+
     }
 
 }

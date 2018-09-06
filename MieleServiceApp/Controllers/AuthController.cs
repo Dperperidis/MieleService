@@ -64,7 +64,7 @@ namespace MieleServiceApp.Controllers
             {
                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
                 new Claim(ClaimTypes.Name, userForLoginDto.Email),
-                new Claim("role", userFromRepo.IsAdmin.ToString()),
+                new Claim("isAdmin", userFromRepo.IsAdmin.ToString()),
                 new Claim("firstname", userFromRepo.FirstName)
 
 

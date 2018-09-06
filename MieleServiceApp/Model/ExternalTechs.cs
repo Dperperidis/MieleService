@@ -7,7 +7,7 @@ namespace MieleServiceApp.Model
 {
     public class ExternalTechs
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Area { get; set; }
         public string Date { get; set; }
         public string customerId { get; set; }

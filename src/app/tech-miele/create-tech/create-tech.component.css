@@ -10,3 +10,7 @@
 .invalid-feedback {
     font-size: 90%;
 }
+
+.btn{
+    text-transform: none;
+}

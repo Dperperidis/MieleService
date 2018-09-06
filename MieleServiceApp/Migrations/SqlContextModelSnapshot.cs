@@ -21,8 +21,9 @@ namespace MieleServiceApp.Migrations
 
             modelBuilder.Entity("MieleServiceApp.Model.ExternalTechs", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Area");
 
@@ -51,6 +52,37 @@ namespace MieleServiceApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ExternalTechs");
+                });
+
+            modelBuilder.Entity("MieleServiceApp.Model.Partners", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("City");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Fax");
+
+                    b.Property<string>("Mobile");
+
+                    b.Property<string>("Nomos");
+
+                    b.Property<string>("Partner");
+
+                    b.Property<string>("Phone");
+
+                    b.Property<string>("PostCode");
+
+                    b.Property<string>("State");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Partners");
                 });
 
             modelBuilder.Entity("MieleServiceApp.Model.Tech", b =>

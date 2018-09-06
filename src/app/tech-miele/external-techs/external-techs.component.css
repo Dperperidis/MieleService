@@ -1,14 +1,32 @@
-input[type=text],textarea
-{
-    background-color: rgba(191, 189, 189, 0.295);
-    border:solid 1px #BFBDBD;
-    color: #c51717fa;
-    height: 28px;
-    padding-left:10px;
-    width: 150px;
-    box-shadow: 2px 2px 0 #828181 inset;
+.card {
+    max-width: 20rem;
+    height:50%;
 }
 
-.btn {
-    background-color: #af121f!important;
-}
+.card img {
+    transform: scale(1, 1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+  }
+
+.card:hover img {
+    transform: scale(1.1, 1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 1;
+  }
+
+.card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  img{
+    height: 200px; 
+    width: 100%;
+     display: block;
+  }
+
+  .row{
+      margin-top:20%;
+  }

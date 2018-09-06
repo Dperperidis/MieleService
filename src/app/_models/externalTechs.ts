@@ -1,4 +1,4 @@
-export interface ExternalTechs {
+export class ExternalTechs {
     id: number;
     area: string;
     date: string;

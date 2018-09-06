@@ -14,5 +14,6 @@ img{
 }
 
 .btn-primary {
-    background-color:#8d000c
+    background-color:#8d000c;
+    text-transform: none;
 }

@@ -1,0 +1,28 @@
+<div>
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" for="inputLarge">Ψάξε για περιοχή</label>
+    <input class="form-control form-control-lg" #query (keyup)="filter(query.value)" type="text" placeholder="Εδώ πληκτρολογείς την περιοχή που θές να ψάξεις"
+      id="inputLarge">
+    <label for="exampleSelect1">Διάλεξε κριτήριο αναζήτησης</label>
+    <select class="form-control" id="exampleSelect1" (change)="changeSearch()">
+      <option>Πόλη</option>
+      <option>Νομός</option>
+
+    </select>
+  </div>
+  <div *ngFor="let part of filteredPartner" class="container mt-5">
+    <div class="card border-warning mb-3" style="max-width: 20rem;">
+      <h3 class="card-header">{{part.nomos}}</h3>
+      <div class="card-body">
+        <h4 class="card-title">{{part.city}}</h4>
+        <p class="card-text">Ονομ/ώνυμο: {{part.partner}}
+        </p>
+        <p class="card-text">Τηλ: {{part.phone}}</p>
+        <p class="card-text">ΤΚ: {{part.postCode}}</p>
+        <p class="card-text">Διεύθυνση: {{part.address}}</p>
+        <p class="card-text">Email: {{part.email}}</p>
+        <p class="card-text">Κινητό: {{part.mobile}}</p>
+      </div>
+    </div>
+  </div>
+</div>

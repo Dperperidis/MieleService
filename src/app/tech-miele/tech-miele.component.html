@@ -1,15 +1,12 @@
 <div class="p-5">
   <div class="form-group">
     <label class="col-form-label col-form-label-lg" for="inputLarge">Ψάξε για περιοχή</label>
-    <input class="form-control form-control-lg" 
-    #query
-    (keyup)="filter(query.value)"
-    type="text"
-     placeholder="Εδώ πληκτρολογείς την περιοχή που θές να ψάξεις" id="inputLarge">
+    <input class="form-control form-control-lg" #query (keyup)="filter(query.value)" type="text" placeholder="Εδώ πληκτρολογείς την περιοχή"
+      id="inputLarge">
   </div>
   <div class="row">
     <div class="col-10">
-      <table class="table table-hover">
+      <table class="table table-hover animated bounceInRight">
         <tbody>
           <tr class="table-default" *ngFor="let tech of filteredTechs;let i = index" [ngClass]="{blue: tech.specialization == 'Ψυκτικός', 
           brown: tech.specialization == 'Καφετιέρα',
@@ -32,6 +29,28 @@
               <h6>Περιοχές Εξυπηρέτησης Τεχνικού</h6>
               <p>{{tech.areaService}}</p>
             </mat-expansion-panel>
+            <tr class="blue">
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <td>Φωτιάδης Δημήτρης</td>
+                  </mat-panel-title>
+                  <button type="button" class="btn btn-danger" [routerLink]="['/external/tech/fot']">Προγραμμάτισε Ραντεβού</button>
+                </mat-expansion-panel-header>
+                <h6>Περιοχές Εξυπηρέτησης Τεχνικού</h6>
+                <p>Μόνο ψυκτικός</p>
+              </mat-expansion-panel>
+              <tr class="table-default">
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <td>Μακράκης Αθανάσιος</td>
+                  </mat-panel-title>
+                  <button type="button" [routerLink]="['/external/tech/mak']"  class="btn btn-danger">Προγραμμάτισε Ραντεβού</button>
+                </mat-expansion-panel-header>
+                <h6>Περιοχές Εξυπηρέτησης Τεχνικού</h6>
+                <p>ΠΑΝΤΟΥ και κυρίως απογευματινές ώρες</p>
+              </mat-expansion-panel>
         </tbody>
       </table>
     </div>

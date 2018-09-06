@@ -1,32 +1,40 @@
 .card {
-    max-width: 25rem;
-    height:50%;
+  max-width: 20rem;
+  height: 50%;
+  background-color: rgb(255, 253, 253);
+ 
+  
 }
 
 .card img {
-    transform: scale(1, 1);
-    transition-duration: 500ms;
-    transition-timing-function: ease-out;
-  }
+  transform: scale(1, 1);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
 
 .card:hover img {
-    transform: scale(1.1, 1.1);
-    transition-duration: 500ms;
-    transition-timing-function: ease-out;
-    opacity: 1;
-  }
+  transform: scale(1.1, 1.1);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  opacity: 1;
+}
 
 .card-img-wrapper {
-    overflow: hidden;
-    position: relative;
-  }
+  overflow: hidden;
+  position: relative;
+}
 
-  h4 {
-      text-decoration: none;
-  }
+h4 {
+  text-decoration: none;
+}
 
-  img{
-    height: 200px; 
-    width: 100%;
-     display: block;
-  }
+img {
+  height: 200px;
+  width: 100%;
+  display: block;
+} 
+
+.card:hover {
+    box-shadow: 0 20px 35px rgba(0,0,0,0.25), 0 15px 15px rgba(0,0,0,0.22);
+
+} 

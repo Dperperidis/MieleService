@@ -19,35 +19,66 @@ import { PotsComponent } from "./mieleproducts/pots/pots.component";
 import { ToysComponent } from "./mieleproducts/toys/toys.component";
 import { VacuumComponent } from "./mieleproducts/vacuum/vacuum.component";
 import { ExternalTechsComponent } from "./tech-miele/external-techs/external-techs.component";
-
+import { AgentAuthResolver } from "./_resolvers/agent-auth.resolver";
+import { TechFotiadisComponent } from "./tech-miele/tech-fotiadis/tech-fotiadis.component";
+import { TechMakrakisComponent } from "./tech-miele/tech-makrakis/tech-makrakis.component";
+import { EtapartnersComponent } from "./etapartners/etapartners.component";
+import { PreventUnsavedChanges } from "./_guards/prevent-unsaved-changes.guard";
+import { ArticlesComponent } from "./articles/articles.component";
 
 export const routes: Routes = [
-    {path: '', component: LoginComponent},
-    
-    {path: 'register', component: RegisterComponent},
-    {
-        path: '',
-        runGuardsAndResolvers: "always",
-        canActivate: [AuthGuard],
-        children:[
-            {path: 'mieletech', component: TechMieleComponent},
-            {path: 'products', component: MieleproductsComponent},
-            {path: 'home', component: HomeComponent},
-            {path: 'newtech', component: CreateTechComponent},
-            {path: 'agents', component: AgentComponent},
-            {path: 'agents-card/:id', component: AgentCardComponent, resolve: {agent: AgentCardResolver } },
-            {path: 'products/washingmachine', component: WashingmachineComponent},
-            {path: 'products/coffeemaker', component: CoffemakerComponent},
-            {path: 'products/dishwasher', component: DishwasherComponent},
-            {path: 'products/drymachine', component: DrymachineComponent},
-            {path: 'products/ironmachine', component: IronmachineComponent},
-            {path: 'products/kitchen', component: KitchenComponent},
-            {path: 'products/pots', component: PotsComponent},
-            {path: 'products/toys', component: ToysComponent},
-            {path: 'products/vacuum', component: VacuumComponent},
-            {path: 'external', component: ExternalTechsComponent},
+  { path: "", component: LoginComponent },
 
-           ]
-    }
+  { path: "register", component: RegisterComponent },
+  {
+    path: "",
+    runGuardsAndResolvers: "always",
+    canActivate: [AuthGuard],
+    children: [
+      { path: "mieletech", component: TechMieleComponent },
+      { path: "products", component: MieleproductsComponent },
+      { path: "home", component: HomeComponent },
+      { path: "newtech", component: CreateTechComponent },
+      { path: "agents", component: AgentComponent },
+      {
+        path: "agents-card/:id",
+        component: AgentCardComponent,
+        resolve: { agent: AgentCardResolver }
+      },
+      { path: "products/washingmachine", component: WashingmachineComponent },
+      { path: "products/coffeemaker", component: CoffemakerComponent },
+      { path: "products/dishwasher", component: DishwasherComponent },
+      { path: "products/drymachine", component: DrymachineComponent },
+      { path: "products/ironmachine", component: IronmachineComponent },
+      { path: "products/kitchen", component: KitchenComponent },
+      { path: "products/pots", component: PotsComponent },
+      { path: "products/toys", component: ToysComponent },
+      { path: "products/vacuum", component: VacuumComponent },
+      { path: "external/techs", component: ExternalTechsComponent },
+      { path: "eta/partners", component: EtapartnersComponent },
+      { path: "articles", component: ArticlesComponent },
 
+      {
+        path: "external/tech/fot",
+        component: TechFotiadisComponent,
+        resolve: { agent: AgentAuthResolver }
+      },
+      {
+        path: "external/tech/fot/:id",
+        component: TechFotiadisComponent,
+        resolve: { agent: AgentAuthResolver }
+      },
+      {
+        path: "external/tech/fot/new",
+        component: TechFotiadisComponent,
+        resolve: { agent: AgentAuthResolver }
+      },
+      
+      {
+        path: "external/tech/mak",
+        component: TechMakrakisComponent,
+        resolve: { agent: AgentAuthResolver }
+      }
+    ]
+  }
 ];

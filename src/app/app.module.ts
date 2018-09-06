@@ -8,11 +8,17 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { JwtModule } from "../../node_modules/@auth0/angular-jwt";
 import { CollapseModule } from "ngx-bootstrap/collapse";
 import { MatButtonModule, MatCheckboxModule } from "@angular/material";
-import { MatToolbarModule, MatTableModule } from "@angular/material";
+import {
+  MatInputModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSortModule,
+  MatTableModule
+} from "@angular/material";
 import { MatExpansionModule } from "@angular/material/expansion";
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { TabsModule } from "ngx-bootstrap/tabs";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { ModalModule } from 'ngx-bootstrap';
 
 
 import { AppComponent } from "./app.component";
@@ -41,8 +47,15 @@ import { AgentComponent } from "./agent/agent.component";
 import { AgentCardComponent } from "./agent-card/agent-card.component";
 import { AgentCardResolver } from "./_resolvers/agent-card.resolver";
 import { UsersService } from "./_services/users.service";
-import { ExternalTechsComponent } from './tech-miele/external-techs/external-techs.component';
+import { ExternalTechsComponent } from "./tech-miele/external-techs/external-techs.component";
 import { TechService } from "./_services/tech.service";
+import { AgentAuthResolver } from "./_resolvers/agent-auth.resolver";
+import { TechFotiadisComponent } from "./tech-miele/tech-fotiadis/tech-fotiadis.component";
+import { TechMakrakisComponent } from "./tech-miele/tech-makrakis/tech-makrakis.component";
+import { EtapartnersComponent } from "./etapartners/etapartners.component";
+import { EtaPartnersService } from "./_services/eta-partners.service";
+import { PreventUnsavedChanges } from "./_guards/prevent-unsaved-changes.guard";
+import { ArticlesComponent } from './articles/articles.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -69,7 +82,11 @@ export function tokenGetter() {
     CreateTechComponent,
     AgentComponent,
     AgentCardComponent,
-    ExternalTechsComponent
+    ExternalTechsComponent,
+    TechFotiadisComponent,
+    TechMakrakisComponent,
+    EtapartnersComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +94,10 @@ export function tokenGetter() {
     MatButtonModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatToolbarModule,
+    MatProgressSpinnerModule,
+    ModalModule.forRoot(),
+    MatSortModule,
+    MatPaginatorModule,
     MatCheckboxModule,
     MatInputModule,
     TabsModule.forRoot(),
@@ -93,7 +113,10 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ["localhost:61646"],
-        blacklistedRoutes: ["localhost:61646/api/auth", "localhost:61646/api/techs"]
+        blacklistedRoutes: [
+          "localhost:61646/api/auth",
+          "localhost:61646/api/techs"
+        ]
       }
     })
   ],
@@ -103,7 +126,10 @@ export function tokenGetter() {
     AuthGuard,
     AgentCardResolver,
     UsersService,
-    TechService
+    TechService,
+    AgentAuthResolver,
+    EtaPartnersService,
+    PreventUnsavedChanges
   ],
   bootstrap: [AppComponent]
 })

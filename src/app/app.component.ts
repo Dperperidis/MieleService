@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from './_services/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,13 @@ export class AppComponent {
   jwtHelper = new JwtHelperService();
 
 
-  constructor(private authService: AuthService, private route: ActivatedRoute) {}
+  constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     const token = localStorage.getItem('token');
     if (token) {
       this.authService.decodedToken = this.jwtHelper.decodeToken(token);
+      this.router.navigate(['/home']);
     }
   }
 }
