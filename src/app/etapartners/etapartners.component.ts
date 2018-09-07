@@ -13,7 +13,7 @@ export class EtapartnersComponent implements OnInit {
   data = true;
   toggle = false;
 
-  constructor(private eta: EtaPartnersService) {}
+  constructor(private eta: EtaPartnersService) { }
 
   ngOnInit() {
     this.eta.getPartners().subscribe(res => {
@@ -22,17 +22,20 @@ export class EtapartnersComponent implements OnInit {
   }
 
   filter(query: string) {
+    if (query.length === 0) {
+      this.filteredPartner = []
+    }
     if (this.data == true) {
       this.filteredPartner = query
         ? this.partner.filter(t =>
-            t.city.toLowerCase().includes(query.toLowerCase())
-          )
+          t.city.toLowerCase().includes(query.toLowerCase())
+        )
         : this.partner;
     } else {
       this.filteredPartner = query
         ? this.partner.filter(p =>
-            p.nomos.toLowerCase().includes(query.toLowerCase())
-          )
+          p.nomos.toLowerCase().includes(query.toLowerCase())
+        )
         : this.partner;
     }
   }
