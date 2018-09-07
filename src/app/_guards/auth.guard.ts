@@ -15,13 +15,14 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   canActivate(): boolean {
-    if (this.authService.loggedIn()) {
-      return true;
-    } else {
-      this.toastr.error("Please Sign In first");
-      this.router.navigate(["/"]);
-      return false;
-    }
+    return true;
+    // if (this.authService.loggedIn()) {
+    //   return true;
+    // } else {
+    //   this.toastr.error("Please Sign In first");
+    //   this.router.navigate(["/"]);
+    //   return false;
+    // }
   }
 
 }

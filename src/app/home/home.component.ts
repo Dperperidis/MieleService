@@ -8,16 +8,16 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class HomeComponent implements OnInit, OnDestroy {
 
   constructor() { 
-    document.body.style.backgroundImage = "url(../../../../assets/img/Homeback.jpg)";
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.height = "auto";
+    // document.body.style.backgroundImage = "url(../../../../assets/img/Homeback.jpg)";
+    // document.body.style.backgroundAttachment = "fixed";
+    // document.body.style.backgroundSize = "cover";
+    // document.body.style.height = "auto";
   }
 
   ngOnInit() {
   }
 
   ngOnDestroy(){
-    document.body.style.backgroundImage = '';
+    //document.body.style.backgroundImage = '';
   }
 }

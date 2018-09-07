@@ -31,9 +31,7 @@ export const routes: Routes = [
 
   { path: "register", component: RegisterComponent },
   {
-    path: "",
-    runGuardsAndResolvers: "always",
-    canActivate: [AuthGuard],
+    path: "",       
     children: [
       { path: "mieletech", component: TechMieleComponent },
       { path: "products", component: MieleproductsComponent },

@@ -7,25 +7,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item"  *ngIf="loggedIn()">
+        <li class="nav-item" *ngIf="isAdmin">
           <a class="nav-link" [routerLink]="['/register']">Δημιουργία χρήστη
           </a>
         </li>
-        <li class="nav-item" *ngIf="loggedIn() ">
-            <a class="nav-link" [routerLink]="['/newtech']" >Δημιουργία τεχνικού
-            </a>
-          </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" [routerLink]="['/newtech']">Δημιουργία τεχνικού
+          </a>
+        </li>
       </ul>
-      <div  class="dropdown" dropdown *ngIf="loggedIn()">
+      <div class="dropdown" dropdown *ngIf="loggedIn()">
         <a class=" dropdown-toggle text-light" dropdownToggle>
           Καλωσήρθες {{ authService.decodedToken?.firstname | titlecase}}
         </a>
         <div class="dropdown-menu mt-3" *dropdownMenu>
           <a class="dropdown-item" [routerLink]="['/agents']">
             <i class="fa fa-user"></i>Διαχείριση Agent</a>
-          <div class="dropdown-divider" ></div>
+          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="" (click)="logout()">
-            <i class="fa fa-sign-out" ></i>Έξοδος</a>
+            <i class="fa fa-sign-out"></i>Έξοδος</a>
         </div>
       </div>
     </div>

@@ -15,6 +15,7 @@ export class TechFotiadisComponent implements OnInit {
   tech = new ExternalTechs();
   tasks = new Array<ExternalTechs>();
   user: User;
+  showNewRow = false;
 
   constructor(
     private techService: TechService,
@@ -22,22 +23,23 @@ export class TechFotiadisComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {
-    this.techService.getTechTasks().subscribe(res => {
-      this.tasks = res;
-    });
     this.route.data.subscribe(data => {
       this.user = data["agent"];
     });
   }
 
   ngOnInit() {
-    this.route.params.subscribe((param: Params) => {
-      const id = param['id'];
-      if (id === "new") {
-      } else {
-        this.getTask(id);
-      }
+    this.techService.getTechTasks().subscribe(res => {
+      this.tasks = res;
     });
+  }
+  newTask() {
+    this.showNewRow = true;
+  }
+
+  closeNewTask() {
+    this.showNewRow = false;
+    this.tech = new ExternalTechs();
   }
 
   createOrUpdate() {
@@ -46,7 +48,7 @@ export class TechFotiadisComponent implements OnInit {
 
   createTask() {
     this.techService.createTaskOrder(this.tech).subscribe(res => {
-      this.tasks.splice(0,0,res);
+      this.tasks.splice(0, 0, res);
       this.tech = new ExternalTechs();
     });
   }
@@ -58,15 +60,9 @@ export class TechFotiadisComponent implements OnInit {
     });
   }
 
-  getTask(id: number) {
-    this.techService.getTechTask(id).subscribe(
-      res => {
-        this.tech = res;
-      },
-      error => {
-        this.toastr.error("Kάτι πήγε λάθος");
-      }
-    );
+  editTask(i: number) {
+    this.showNewRow = true;
+    this.deepCopy(i);
   }
 
   delete(id: number) {
@@ -83,5 +79,19 @@ export class TechFotiadisComponent implements OnInit {
         }
       );
     }
+  }
+
+  deepCopy(i: number) {
+    this.tech.area = this.tasks[i].area;
+    this.tech.customerId = this.tasks[i].customerId;
+    this.tech.damage = this.tasks[i].damage;
+    this.tech.fullName = this.tasks[i].fullName;
+    this.tech.date = this.tasks[i].date;
+    this.tech.id = this.tasks[i].id;
+    this.tech.order = this.tasks[i].order;
+    this.tech.origin = this.tasks[i].origin;
+    this.tech.partsCost = this.tasks[i].partsCost;
+    this.tech.serviceCost = this.tasks[i].serviceCost;
+    this.tech.serviceDesc = this.tasks[i].serviceDesc;
   }
 }
